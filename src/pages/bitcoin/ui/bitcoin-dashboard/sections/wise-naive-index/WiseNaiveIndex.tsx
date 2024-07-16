@@ -27,7 +27,7 @@ const WiseNaiveIndex = () => {
         <SegmentPie />
         <div className="mt-5 flex flex-col gap-1 relative z-10 items-center">
           <span className="font-bold font-neue text-[72px] leading-[60.48px] text-white">
-            36
+            46
           </span>
           <img
             src="/assets/bitcoin/wise.svg"
