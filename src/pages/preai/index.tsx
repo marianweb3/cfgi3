@@ -16,7 +16,7 @@ const PreaiPage = () => {
           { label: "Whitepaper", href: "#" },
         ],
       }}
-      fixedHeder={true}
+      fixedHeader={true}
     >
       <PreaiBanner />
       <HoldersBenefits />

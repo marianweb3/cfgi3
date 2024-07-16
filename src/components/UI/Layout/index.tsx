@@ -10,7 +10,7 @@ interface LayoutProps {
   hideFooter?: boolean;
   className?: string;
   theme?: "landbot" | "staking" | "maeve" | "default";
-  fixedHeder?: boolean;
+  fixedHeader?: boolean;
 }
 
 const Layout = ({
@@ -19,12 +19,12 @@ const Layout = ({
   hideFooter = false,
   className,
   theme = "default",
-  fixedHeder,
+  fixedHeader,
 }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen bg-mainBlack">
       {staking ? (
-        <StakingHeader {...staking} theme={theme} fixedHeder={fixedHeder} />
+        <StakingHeader {...staking} theme={theme} fixedHeader={fixedHeader} />
       ) : (
         <Header />
       )}

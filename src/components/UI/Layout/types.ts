@@ -7,5 +7,5 @@ export interface StakingHeaderProps {
   showActionButton?: boolean;
   className?: string;
   theme?: "landbot" | "staking" | "maeve" | "default";
-  fixedHeder?: boolean;
+  fixedHeader?: boolean;
 }

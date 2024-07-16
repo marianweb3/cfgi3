@@ -86,7 +86,7 @@ const StakingHeader = ({
   showActionButton,
   className,
   theme = "default",
-  fixedHeder,
+  fixedHeader,
 }: StakingHeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -97,7 +97,7 @@ const StakingHeader = ({
   return (
     <header
       className={` text-white my-12 w-full z-[1001] ${
-        theme === "maeve" || fixedHeder ? "fixed top-0" : ""
+        theme === "maeve" || fixedHeader ? "fixed top-0" : ""
       }`}
     >
       <div
