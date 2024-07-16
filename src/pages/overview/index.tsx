@@ -11,11 +11,12 @@ import PREAICard from "../../components/UI/common/cards/overview/PREAICard";
 const headerData = {
   logo: "/assets/header/predict-crypto.svg",
   links: [
-    { label: "$PREAI Staking", href: "#" },
-    { label: "$PREAI", href: "#" },
-    { label: "Wise & Naive", href: "#" },
-    { label: "LandBot", href: "#" },
-    { label: "M.A.E.V.E", href: "#" },
+    { label: "predictingai", href: "/predictingai" },
+    // { label: "$PREAI Staking", href: "#" },
+    // { label: "$PREAI", href: "#" },
+    // { label: "Wise & Naive", href: "#" },
+    // { label: "LandBot", href: "#" },
+    // { label: "M.A.E.V.E", href: "#" },
   ],
   showActionButton: false,
   className: "max-w-[1760px] mx-auto w-full",
