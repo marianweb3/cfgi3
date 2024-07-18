@@ -78,3 +78,8 @@ jspm_packages/
 # System Files
 .DS_Store
 Thumbs.db
+
+# Next Migration advice
+.next
+next-env.d.ts
+dist

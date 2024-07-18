@@ -18,7 +18,7 @@ function App() {
         <Route path="/bitcoin" element={<BitcoinPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        {/* Staking  */}
+         {/*Staking*/}
         <Route path="/" element={<OverviewPage />} />
         <Route path="/staking" element={<StakingPage />} />
         <Route path="/preai" element={<PreaiPage />} />
