@@ -1,4 +1,5 @@
 'use client';
+import {useEffect, useState} from "react";
 import { motion } from "framer-motion";
 import Layout from "../../components/UI/Layout";
 import BitcoinDashboard from "./ui/bitcoin-dashboard";
@@ -13,6 +14,18 @@ const headerVariants = {
 };
 
 const BitcoinPage = () => {
+  const [bitcoinData, setBitcoinData] = useState<any>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/api/cfgi', {
+        method: "GET"
+      });
+      setBitcoinData(response);
+    }
+    fetchData();
+  }, []);
+
   return (
     <Layout>
       <div className="flex flex-col max-w-[1440px] w-full mx-auto mt-[52px] ">
