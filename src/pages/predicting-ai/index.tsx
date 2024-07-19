@@ -1,3 +1,4 @@
+'use client'
 import Layout from "../../components/UI/Layout";
 import Banner from "./ui/Banner";
 import AboutWN from "./ui/sections/about-wn/AboutWN";

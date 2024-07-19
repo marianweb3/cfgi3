@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import AddressForm from "./add-new-address";
 import ActionButton from "../../../../../components/UI/common/form-controls/buttons/ActionButton";

@@ -1,9 +1,10 @@
+'use client';
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiTelegramLogo } from "react-icons/pi";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 import { StakingHeaderProps } from "./types";
 import SocialButtons from "../common/form-controls/buttons/SocialButtons";
@@ -103,7 +104,7 @@ const StakingHeader = ({
       <div
         className={`max-w-[1600px] mx-auto w-full flex-row flex justify-between backdrop-blur-md items-center bg-[#0000001A] rounded-full border-2 border-[#FFFFFF1A] px-8 py-2 sm:pr-2 ${className}`}
       >
-        <Link to="/" className="flex items-center space-x-4">
+        <Link href="/" className="flex items-center space-x-4">
           <img src={logo} alt="Logo" className="w-[150px] md:w-auto" />
         </Link>
         <nav className="hidden lg:flex space-x-[50px]">

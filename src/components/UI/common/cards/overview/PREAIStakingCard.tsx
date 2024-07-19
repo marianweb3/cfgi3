@@ -1,3 +1,4 @@
+'use client';
 import { motion } from "framer-motion";
 import { itemVariants } from "./framer-animation";
 import { useState } from "react";
