@@ -1,3 +1,4 @@
+'use client';
 import Layout from "../../components/UI/Layout";
 import Banner from "./ui/banner";
 import ProductOverview from "./ui/product-overview";

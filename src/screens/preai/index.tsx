@@ -1,3 +1,4 @@
+'use client';
 import Layout from "../../components/UI/Layout";
 import Tokenomics from "../staking-insights/ui/tokenomics/Tokenomics";
 import PreaiBanner from "./ui/banner/PreaiBanner";

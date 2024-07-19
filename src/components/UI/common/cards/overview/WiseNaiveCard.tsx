@@ -1,7 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import SegmentPie from "../../../../../pages/bitcoin/ui/bitcoin-dashboard/sections/wise-naive-index/SegmentPie";
+import SegmentPie from "@/src/screens/bitcoin/ui/bitcoin-dashboard/sections/wise-naive-index/SegmentPie";
 import { ArrowUpRightIcon } from "../../../SVGIcons";
 import { itemVariants } from "./framer-animation";
 

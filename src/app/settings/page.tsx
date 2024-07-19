@@ -1,9 +1,9 @@
 import React from 'react';
-import PredictingAI from "@/src/screens/predicting-ai";
+import SettingsPage from "@/src/screens/settings";
 
 function Page() {
     return (
-        <PredictingAI />
+        <SettingsPage />
     );
 }
 

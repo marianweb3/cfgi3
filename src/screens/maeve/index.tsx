@@ -1,3 +1,4 @@
+'use client'
 import Layout from "../../components/UI/Layout";
 import MaeveBanner from "./ui/banner/MaeveBanner";
 import EarnWithMaeve from "./ui/earn-with-maeve/EarnWithMaeve";

@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import PredictingAI from "./pages/predicting-ai";
-import SettingsPage from "./pages/settings";
-import TermsAndConditions from "./pages/terms-and-conditions";
-import BitcoinPage from "./pages/bitcoin";
-import StakingPage from "./pages/staking";
-import StakingInsights from "./pages/staking-insights";
-import OverviewPage from "./pages/overview";
-import LandBotPage from "./pages/landbot";
-import MaevePage from "./pages/maeve";
-import PreaiPage from "./pages/preai";
+import PredictingAI from "@/src/screens/predicting-ai";
+import SettingsPage from "@/src/screens/settings";
+import TermsAndConditions from "@/src/screens/terms-and-conditions";
+import BitcoinPage from "@/src/screens/bitcoin";
+import StakingPage from "@/src/screens/staking";
+import StakingInsights from "@/src/screens/staking-insights";
+import OverviewPage from "@/src/screens/overview";
+import LandBotPage from "@/src/screens/landbot";
+import MaevePage from "@/src/screens/maeve";
+import PreaiPage from "@/src/screens/preai";
 
 function App() {
   return (

@@ -1,3 +1,4 @@
+'use client';
 import { motion } from "framer-motion";
 import Layout from "../../components/UI/Layout";
 import BitcoinDashboard from "./ui/bitcoin-dashboard";

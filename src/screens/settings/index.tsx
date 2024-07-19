@@ -1,8 +1,8 @@
+'use client';
 import Layout from "../../components/UI/Layout";
 import { TabsProvider } from "../../providers/TabsContext";
 import TabContent from "./ui/tabs-container/tab-content";
 import Tabs from "./ui/tabs-container/tabs";
-
 const SettingsPage = () => {
   return (
     <Layout>

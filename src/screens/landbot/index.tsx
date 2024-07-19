@@ -1,3 +1,4 @@
+'use client';
 import Layout from "../../components/UI/Layout";
 import LandBotBanner from "./ui/banner/Banner";
 import Bots from "./ui/sections/bots/Bots";

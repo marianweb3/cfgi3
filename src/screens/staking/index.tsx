@@ -1,3 +1,4 @@
+'use client';
 import Layout from "../../components/UI/Layout";
 import BonusSection from "./ui/BonusSection";
 import Leaderboard from "./ui/leaderboard/Leaderboard";

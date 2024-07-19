@@ -1,9 +1,9 @@
 import React from 'react';
-import PredictingAI from "@/src/screens/predicting-ai";
+import MaevePage from "@/src/screens/maeve";
 
 function Page() {
     return (
-        <PredictingAI />
+        <MaevePage />
     );
 }
 

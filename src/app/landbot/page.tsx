@@ -1,9 +1,9 @@
 import React from 'react';
-import PredictingAI from "@/src/screens/predicting-ai";
+import LandBotPage from "@/src/screens/landbot";
 
 function Page() {
     return (
-        <PredictingAI />
+        <LandBotPage />
     );
 }
 
