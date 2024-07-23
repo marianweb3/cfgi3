@@ -9,6 +9,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
+    'next/core-web-vitals',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended'
   ],
 };

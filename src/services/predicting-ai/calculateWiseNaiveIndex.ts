@@ -22,7 +22,7 @@ const bitcoinInfo = {
     "date": "2024-07-16 16:15:06",
     "price": 63507.5,
     "cfgi": 36,
-    "data_price": 47,
+    "data_price": 46,
     "data_volatility": 23.5,
     "data_volume": 10,
     "data_impulse": 11.5,
@@ -33,6 +33,10 @@ const bitcoinInfo = {
     "datas_whales": 25,
     "data_orders": 53.5
 };
+
+export function addTwoNumbers(a, b) {
+    return a + b;
+}
 
 const { wni, status } = calculateWNI(bitcoinInfo);
 console.log(`Wise and Naive Index: ${wni} (${status})`);
