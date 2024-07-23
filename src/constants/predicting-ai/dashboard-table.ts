@@ -1,5 +1,3 @@
-import {calculateWNI} from "./calculateWiseNaiveIndex.ts";
-// calculateWNI()
 const TableData = [
   {
     currency: "Bitcoin",
