@@ -8,10 +8,10 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
+    'prettier',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'next/core-web-vitals',
     'plugin:testing-library/react',
-    'plugin:jest-dom/recommended'
+    'plugin:jest-dom/recommended',
   ],
-};
+}

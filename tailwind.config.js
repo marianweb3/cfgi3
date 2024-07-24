@@ -11,12 +11,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mainBlack: "#070504",
-        orangeBg: "#FF532E",
+        mainBlack: '#070504',
+        orangeBg: '#FF532E',
       },
       fontFamily: {
-        "work-sans": ['"Work Sans"', "sans-serif"],
-        neue: ['"Neue Machina"', "sans-serif"],
+        'work-sans': ['"Work Sans"', 'sans-serif'],
+        neue: ['"Neue Machina"', 'sans-serif'],
       },
       backgroundImage: {
         noise: "url('/assets/noise.png')",
@@ -24,4 +24,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
