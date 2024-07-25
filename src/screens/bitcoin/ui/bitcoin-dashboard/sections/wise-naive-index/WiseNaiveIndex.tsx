@@ -16,7 +16,7 @@ const item = {
 
 const WiseNaiveIndex = ({bitcoinData}) => {
   // const { wni, status } = calculateWNI(bitcoinInfo)
-  const { wni, status } = calculateWNI(bitcoinData?.[0])
+  const { wni, status } = calculateWNI(bitcoinInfo)
   return (
     <motion.section
       variants={item}

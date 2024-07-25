@@ -20,9 +20,10 @@ const BitcoinPage = () => {
 
   useEffect(() => {
     void (async () => {
-      const response = await axios('http://localhost:3000/api/cfgi')
-      if (typeof response.data === 'string') return console.error(response.data)
-      setBitcoinData(response.data)
+      // const response = await axios('http://localhost:3000/api/cfgi')
+      // if (typeof response.data === 'string') return console.error(response.data)
+      // setBitcoinData(response.data)
+      setBitcoinData([])
     })()
   }, [])
 
