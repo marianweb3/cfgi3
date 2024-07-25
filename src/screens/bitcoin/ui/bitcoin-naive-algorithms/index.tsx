@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { tabData } from "../../../../constants/bitcoin/tabData";
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { tabData } from '../../../../constants/bitcoin/tabData'
 
 const TabsSection = () => {
-  const [selectedTab, setSelectedTab] = useState("Breakdown");
+  const [selectedTab, setSelectedTab] = useState('Breakdown')
 
   const renderContent = () => {
-    const { paragraphs } = tabData[selectedTab];
+    const { paragraphs } = tabData[selectedTab]
     return (
       <motion.div
         key={selectedTab}
@@ -46,8 +46,8 @@ const TabsSection = () => {
           </ul>
         </div>
       </motion.div>
-    );
-  };
+    )
+  }
 
   return (
     <section className="bg-[#141414] rounded-[32px] border border-[#FFFFFF1A] p-[20px] sm:p-[25px] md:p-[30px] flex flex-col gap-[20px] sm:gap-[25px] md:gap-[30px]">
@@ -66,12 +66,12 @@ const TabsSection = () => {
               key={tab}
               className={`inline-block md:block cursor-pointer px-[20px] sm:pl-[25px] md:pl-[30px] py-3 sm:py-4 md:py-5 rounded-[10px] ${
                 selectedTab === tab
-                  ? "bg-[#FF532E]"
-                  : "bg-transparent hover:bg-[#FF532E]"
+                  ? 'bg-[#FF532E]'
+                  : 'bg-transparent hover:bg-[#FF532E]'
               } text-white text-[16px] sm:text-[18px] md:text-[20px] leading-[24px] sm:leading-[26px] md:leading-[30px] font-medium tracking-wide transition-colors duration-300`}
               onClick={() => setSelectedTab(tab)}
             >
-              {tab.replace(/([A-Z])/g, " $1")}
+              {tab.replace(/([A-Z])/g, ' $1')}
             </li>
           ))}
         </ul>
@@ -81,7 +81,7 @@ const TabsSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TabsSection;
+export default TabsSection

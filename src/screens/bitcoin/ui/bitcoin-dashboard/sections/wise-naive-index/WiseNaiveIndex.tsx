@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import ButtonArrowUpRight from "../../../../../../components/UI/common/form-controls/buttons/ButtonArrowUpRight";
-import SegmentPie from "./SegmentPie";
+import { motion } from 'framer-motion'
+import ButtonArrowUpRight from '../../../../../../components/UI/common/form-controls/buttons/ButtonArrowUpRight'
+import SegmentPie from './SegmentPie'
+import { bitcoinInfo } from '@/src/services/bitcoin/bitcoin-constant-data.ts'
+import { calculateWNI } from '@/src/services/utils/calculateWiseNaiveIndex.ts'
+import { capitalizeFirstLetter } from '@/src/services/utils/capitalizeFirstLetter.ts'
 
 const item = {
   hidden: { y: 30, opacity: 0 },
@@ -9,9 +12,11 @@ const item = {
     opacity: 1,
     transition: { duration: 0.5 },
   },
-};
+}
 
-const WiseNaiveIndex = () => {
+const WiseNaiveIndex = ({bitcoinData}) => {
+  // const { wni, status } = calculateWNI(bitcoinInfo)
+  const { wni, status } = calculateWNI(bitcoinData?.[0])
   return (
     <motion.section
       variants={item}
@@ -21,20 +26,25 @@ const WiseNaiveIndex = () => {
         <h3 className="text-white font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">
           Wise & Naive Index
         </h3>
+        {/*<h3 className="text-white font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">*/}
+        {/*  { JSON.stringify(bitcoinData[0]?.price)}*/}
+        {/*</h3>*/}
         <ButtonArrowUpRight />
       </div>
       <div className="bg-black border-2 border-[#FFFFFF1A] pb-10 rounded-3xl w-full flex flex-col items-center justify-center relative overflow-hidden h-full">
-        <SegmentPie />
+        <SegmentPie rotate={wni} />
         <div className="mt-5 flex flex-col gap-1 relative z-10 items-center">
           <span className="font-bold font-neue text-[72px] leading-[60.48px] text-white">
-            46
+            {wni}
           </span>
-          <img
-            src="/assets/bitcoin/wise.svg"
-            alt=""
-            className="w-[59.24px] !h-5"
-          />
+          <div className="flex items-baseline gap-1">
+            <img src="/dots.svg" alt="" className="!h-5 translate-y-0.5" />
+            <span className="font-neue text-[24px] leading-[24px] text-white">
+              {capitalizeFirstLetter(status)}
+            </span>
+          </div>
         </div>
+        {/* Background Styles */}
         <img
           src="/assets/bitcoin/green-ellipse.png"
           alt="Green Ellipse"
@@ -42,7 +52,7 @@ const WiseNaiveIndex = () => {
         />
         <img
           src="/assets/bitcoin/Union.png"
-          alt="Green Ellipse"
+          alt="Union"
           className="absolute bottom-0 w-full"
         />
       </div>
@@ -68,28 +78,34 @@ const WiseNaiveIndex = () => {
           <span className="text-[#ffffff4d] font-work-sans font-medium text-[14px] leading-[19.6px] -tracking-wider">
             Time span
           </span>
-          <DropDown />
+          <div
+            type="button"
+            className="flex items-center justify-between w-full text-[20px] leading-[28px] -tracking-wider max-w-[88px] font-medium text-white bg-[#1C1C1C]"
+          >
+            15 min
+          </div>
+          {/*<DropDown />*/}
         </div>
       </div>
     </motion.section>
-  );
-};
+  )
+}
 
-export default WiseNaiveIndex;
+export default WiseNaiveIndex
 
-import { useState } from "react";
+import { useState } from 'react'
 
-const options = ["15 min", "10 min", "25 min"];
+const options = ['15 min', '10 min', '25 min']
 
 const DropDown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedOption, setSelectedOption] = useState(options[0])
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => setIsOpen(!isOpen)
   const selectOption = (option: string) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
+    setSelectedOption(option)
+    setIsOpen(false)
+  }
 
   return (
     <div className="relative inline-block text-left">
@@ -137,5 +153,5 @@ const DropDown = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

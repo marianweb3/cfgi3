@@ -4,7 +4,7 @@ import BitcoinBreakdown from "./sections/bitcoin-breakdown/BitcoinBreakdown";
 import CreateAlert from "./sections/create-alert/CreateAlert";
 import WiseNaiveIndex from "./sections/wise-naive-index/WiseNaiveIndex";
 
-const BitcoinDashboard = () => {
+const BitcoinDashboard = ({ bitcoinData }) => {
   return (
     <motion.section
       variants={container}
@@ -12,13 +12,14 @@ const BitcoinDashboard = () => {
       animate="visible"
       className="grid grid-cols-2 xl:grid-cols-[520px_1fr] gap-5 mt-12 mb-[20px]"
     >
-      <WiseNaiveIndex />
+      <WiseNaiveIndex bitcoinData={bitcoinData} />
       <BitcoinBreakdown />
-      <AISuggestion />
-      <CreateAlert />
+      {/* TODO add panels back */}
+      {/*<AISuggestion />*/}
+      {/*<CreateAlert />*/}
     </motion.section>
-  );
-};
+  )
+}
 
 export default BitcoinDashboard;
 

@@ -1,30 +1,30 @@
-'use client';
-import {useEffect, useState} from "react";
-import { motion } from "framer-motion";
-import Layout from "../../components/UI/Layout";
-import BitcoinDashboard from "./ui/bitcoin-dashboard";
-import BitcoinNaiveAlgorithmSection from "./ui/bitcoin-naive-algorithms";
-import History from "./ui/history";
-import MobileAppInstructions from "./ui/mobile-app-instructions";
-import WiseNaiveAlgorithms from "./ui/wise-naive-algorithms";
+'use client'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import Layout from '../../components/UI/Layout'
+import { BitcoinData } from '@/src/types/services/bitcoinPage.ts'
+import BitcoinDashboard from './ui/bitcoin-dashboard'
+import BitcoinNaiveAlgorithmSection from './ui/bitcoin-naive-algorithms'
+import History from './ui/history'
+import MobileAppInstructions from './ui/mobile-app-instructions'
+import WiseNaiveAlgorithms from './ui/wise-naive-algorithms'
+import axios from 'axios'
 
 const headerVariants = {
   hidden: { opacity: 0, x: -50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
+}
 
 const BitcoinPage = () => {
-  const [bitcoinData, setBitcoinData] = useState<any>();
+  const [bitcoinData, setBitcoinData] = useState<BitcoinData[]>([])
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api/cfgi', {
-        method: "GET"
-      });
-      setBitcoinData(response);
-    }
-    fetchData();
-  }, []);
+    void (async () => {
+      const response = await axios('http://localhost:3000/api/cfgi')
+      if (typeof response.data === 'string') return console.error(response.data)
+      setBitcoinData(response.data)
+    })()
+  }, [])
 
   return (
     <Layout>
@@ -38,7 +38,7 @@ const BitcoinPage = () => {
           <span className="text-orangeBg">/</span> Bitcoin
         </motion.h3>
         <div className="flex flex-col gap-[100px]">
-          <BitcoinDashboard />
+          <BitcoinDashboard bitcoinData={bitcoinData} />
           <History />
           <WiseNaiveAlgorithms />
           <BitcoinNaiveAlgorithmSection />
@@ -46,7 +46,7 @@ const BitcoinPage = () => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default BitcoinPage;
+export default BitcoinPage

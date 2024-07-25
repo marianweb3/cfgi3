@@ -12,7 +12,8 @@ import PREAICard from "../../components/UI/common/cards/overview/PREAICard";
 const headerData = {
   logo: "/assets/header/predict-crypto.svg",
   links: [
-    { label: "predictingai", href: "/predictingai" },
+    { label: "bitcoin", href: "/bitcoin" },
+    // { label: "predictingai", href: "/predictingai" },
     // { label: "$PREAI Staking", href: "#" },
     // { label: "$PREAI", href: "#" },
     // { label: "Wise & Naive", href: "#" },

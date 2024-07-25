@@ -1,4 +1,4 @@
-import TableData from "../../../../../constants/predicting-ai/dashboard-table";
+import TableData from "@/src/services/predicting-ai/dashboard-table.ts";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
