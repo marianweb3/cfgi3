@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import PerformanceCard from './PerformanceCard'
 
-const data = [
+const backupdata = [
   //  TODO add back the data
   { title: 'Price', time: '00:18', history: 30, color: '#FF7F27', statusPercentage: 36, statusTrend: 'DOWNTREND'},
   { title: 'Volume', time: '01:18', history: 20, color: '#FFBF27', statusPercentage: 20, statusTrend: 'UPTREND' },
@@ -24,9 +24,44 @@ const container = {
   },
 }
 
-const WiseNaiveAlgorithms = () => {
+const WiseNaiveAlgorithms = ({ bitcoinData }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+
+  const data = [
+    {
+      title: 'Price',
+      time: '00:00',
+      history: 5,
+      color: '#FF7F27',
+      statusPercentage: 36,
+      statusTrend: 'DOWNTREND',
+    },
+    {
+        title: 'Volume',
+        time: '04:00',
+        history: 10,
+        color: '#FFBF27',
+        statusPercentage: 20,
+        statusTrend: 'UPTREND',
+    },
+    {
+      title: 'Volatility',
+      time: '08:00',
+      history: 15,
+      color: '#2D7A08',
+      statusPercentage: 23,
+      statusTrend: 'UPTREND',
+    },
+    {
+      title: 'Whale Watch',
+      time: '12:00',
+      history: 20,
+      color: '#FF7F27',
+      statusPercentage: 70,
+      statusTrend: 'UPTREND',
+    },
+  ]
 
   return (
     <section ref={ref} className="flex flex-col flex-wrap mt-[52px]">

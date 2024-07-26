@@ -40,7 +40,7 @@ const BitcoinPage = () => {
         <div className="flex flex-col gap-[100px]">
           <BitcoinDashboard bitcoinData={bitcoinData} />
           <History bitcoinData={bitcoinData} />
-          <WiseNaiveAlgorithms />
+          {/*<WiseNaiveAlgorithms bitcoinData={bitcoinData}/>*/}
           <BitcoinNaiveAlgorithmSection />
           <MobileAppInstructions />
         </div>
