@@ -26,9 +26,9 @@ const WiseNaiveIndex = ({ bitcoinData }) => {
         <h3 className="text-white font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">
           Wise & Naive Index
         </h3>
-        <h3 className="text-blue-400 font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">
-          {JSON.stringify(bitcoinData[bitcoinData.length - 1]?.price)}
-        </h3>
+        {/*<h3 className="text-blue-400 font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">*/}
+        {/*  {JSON.stringify(bitcoinData[bitcoinData.length - 1]?.price)}*/}
+        {/*</h3>*/}
         <ButtonArrowUpRight />
       </div>
       <div className="bg-black border-2 border-[#FFFFFF1A] pb-10 rounded-3xl w-full flex flex-col items-center justify-center relative overflow-hidden h-full">
