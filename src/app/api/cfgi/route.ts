@@ -1,10 +1,11 @@
 import axios, { AxiosResponse } from 'axios'
 import { config } from '@/src/config.ts'
+import {getRequestDateRange} from "@/src/services/utils/bitcoin/getRequestDateRange.ts";
 
 export async function GET() {
   try {
     const response: AxiosResponse = await axios.get(
-      config.cfgiApi + '&token=BTC&values=1&period=1',
+      config.cfgiApi + `&token=BTC${getRequestDateRange()}&period=1`,
     )
     const responseData = await response.data
 

@@ -3,6 +3,7 @@ import { useRef } from "react";
 import CustomBarChart from "../../../../components/UI/common/charts/CustomBarChart";
 import CustomLineChart from "../../../../components/UI/common/charts/CustomLineChart";
 import { barData, lineData } from "../../../../constants/bitcoin/chartData";
+import {calculateBarData} from "@/src/services/utils/bitcoin/chartData.ts";
 
 const headerVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -14,7 +15,7 @@ const chartVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
 };
 
-const History = () => {
+const History = ({bitcoinData}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -42,7 +43,7 @@ const History = () => {
             </span>
             <div className="w-[1px] md:w-[2px] bg-[#323232]" />
             <span className="font-work-sans font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] tracking-tighter text-[#323232]">
-              16 hours
+              12 hours
             </span>
           </div>
         </div>
@@ -53,8 +54,7 @@ const History = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={chartVariants}
       >
-        <CustomBarChart data={barData} height={500} />
-      </motion.div>
+        <CustomBarChart data={bitcoinData.length ? calculateBarData(bitcoinData) : barData} height={500} />      </motion.div>
 
       <motion.div
         initial="hidden"

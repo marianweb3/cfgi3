@@ -1,6 +1,5 @@
-const SegmentPie = ({ rotate = 25 }: { rotate?: number }) => {
+const SegmentPie = ({ rotate = 50}: { rotate?: number }) => {
   const rotation = (rotate * 0.8 - 25) * 1.8
-  // const rotation = (rotate - 50) * 1.8;
   return (
     <div className="relative flex items-center justify-center">
       <img src="/assets/bitcoin/pie.svg" alt="Pie" className="w-full" />

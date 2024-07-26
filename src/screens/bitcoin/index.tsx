@@ -20,10 +20,9 @@ const BitcoinPage = () => {
 
   useEffect(() => {
     void (async () => {
-      // const response = await axios('http://localhost:3000/api/cfgi')
-      // if (typeof response.data === 'string') return console.error(response.data)
-      // setBitcoinData(response.data)
-      setBitcoinData([])
+      const response = await axios('http://localhost:3000/api/cfgi')
+      if (typeof response.data === 'string') return console.error(response.data)
+      setBitcoinData(response.data)
     })()
   }, [])
 
@@ -40,7 +39,7 @@ const BitcoinPage = () => {
         </motion.h3>
         <div className="flex flex-col gap-[100px]">
           <BitcoinDashboard bitcoinData={bitcoinData} />
-          <History />
+          <History bitcoinData={bitcoinData} />
           <WiseNaiveAlgorithms />
           <BitcoinNaiveAlgorithmSection />
           <MobileAppInstructions />

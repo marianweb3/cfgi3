@@ -14,9 +14,9 @@ const item = {
   },
 }
 
-const WiseNaiveIndex = ({bitcoinData}) => {
+const WiseNaiveIndex = ({ bitcoinData }) => {
   // const { wni, status } = calculateWNI(bitcoinInfo)
-  const { wni, status } = calculateWNI(bitcoinInfo)
+  const { wni, status } = calculateWNI(bitcoinData[bitcoinData.length - 1])
   return (
     <motion.section
       variants={item}
@@ -26,21 +26,21 @@ const WiseNaiveIndex = ({bitcoinData}) => {
         <h3 className="text-white font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">
           Wise & Naive Index
         </h3>
-        {/*<h3 className="text-white font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">*/}
-        {/*  { JSON.stringify(bitcoinData[0]?.price)}*/}
-        {/*</h3>*/}
+        <h3 className="text-blue-400 font-work-sans font-medium text-[40px] leading-[44px] -tracking-wider">
+          {JSON.stringify(bitcoinData[bitcoinData.length - 1]?.price)}
+        </h3>
         <ButtonArrowUpRight />
       </div>
       <div className="bg-black border-2 border-[#FFFFFF1A] pb-10 rounded-3xl w-full flex flex-col items-center justify-center relative overflow-hidden h-full">
         <SegmentPie rotate={wni} />
         <div className="mt-5 flex flex-col gap-1 relative z-10 items-center">
           <span className="font-bold font-neue text-[72px] leading-[60.48px] text-white">
-            {wni}
+            {wni ? wni : '...'}
           </span>
           <div className="flex items-baseline gap-1">
             <img src="/dots.svg" alt="" className="!h-5 translate-y-0.5" />
             <span className="font-neue text-[24px] leading-[24px] text-white">
-              {capitalizeFirstLetter(status)}
+              {wni ? capitalizeFirstLetter(status) : 'Calculating...'}
             </span>
           </div>
         </div>
