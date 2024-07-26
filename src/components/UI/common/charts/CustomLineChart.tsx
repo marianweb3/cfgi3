@@ -2,22 +2,23 @@ import {
   LineChart,
   Line,
   XAxis,
+  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
-import CustomXAxisTick from "./chart-adjustments/CustomXAxisTick";
+} from 'recharts'
+import CustomXAxisTick from './chart-adjustments/CustomXAxisTick'
 
 interface CustomLineChartProps {
   data: {
-    time: string;
-    price: number;
-  }[];
-  height: number;
+    time: string
+    price: number
+  }[]
+  height: number
 }
 
 const CustomLineChart = ({ data, height }: CustomLineChartProps) => {
-  const interval = Math.ceil(data.length / 10);
+  const interval = Math.ceil(data.length / 10)
 
   return (
     <ResponsiveContainer width="100%" height={height}>
@@ -25,8 +26,14 @@ const CustomLineChart = ({ data, height }: CustomLineChartProps) => {
         data={data}
         margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
       >
-        <CartesianGrid stroke="#333" vertical={false} />
-        <XAxis dataKey="time"    tick={({ x, y, payload, index }) => (
+        <CartesianGrid stroke="#333" vertical={true} />
+        <YAxis
+          domain={['dataMin - 1000', 'dataMax + 1000']}
+          tick={{ fill: '#999' }}
+        />
+        <XAxis
+          dataKey="time"
+          tick={({ x, y, payload, index }) => (
             <CustomXAxisTick
               x={x}
               y={y}
@@ -34,12 +41,13 @@ const CustomLineChart = ({ data, height }: CustomLineChartProps) => {
               index={index}
               interval={interval}
             />
-          )} />
+          )}
+        />
         <Tooltip />
         <Line type="monotone" dataKey="price" stroke="#FF7F27" />
       </LineChart>
     </ResponsiveContainer>
-  );
-};
+  )
+}
 
-export default CustomLineChart;
+export default CustomLineChart

@@ -3,7 +3,7 @@ import { useRef } from "react";
 import CustomBarChart from "../../../../components/UI/common/charts/CustomBarChart";
 import CustomLineChart from "../../../../components/UI/common/charts/CustomLineChart";
 import { barData, lineData } from "../../../../constants/bitcoin/chartData";
-import {calculateBarData} from "@/src/services/utils/bitcoin/chartData.ts";
+import {calculateBarData, calculateLineData} from "@/src/services/utils/bitcoin/chartData.ts";
 
 const headerVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -82,7 +82,7 @@ const History = ({bitcoinData}) => {
         animate={isInView ? "visible" : "hidden"}
         variants={chartVariants}
       >
-        <CustomLineChart data={lineData} height={437} />
+        <CustomLineChart data={bitcoinData.length ? calculateLineData(bitcoinData) : lineData} height={437} />
       </motion.div>
     </section>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const UpdateBar = () => {
-  const squares = new Array(10).fill(0)
+  const squares = new Array(50).fill(0)
   const [timeRemaining, setTimeRemaining] = useState('')
   const [width, setWidth] = useState(0)
 
@@ -20,8 +20,7 @@ const UpdateBar = () => {
 
       const totalMinutesInDay = 24 * 60
       const minutesPassed = totalMinutesInDay - (hours * 60 + minutes)
-      const percentageRemaining= (minutesPassed / totalMinutesInDay) * 100
-
+      const percentageRemaining = (minutesPassed / totalMinutesInDay) * 100
 
       setWidth(Math.floor(percentageRemaining))
     }
@@ -34,6 +33,16 @@ const UpdateBar = () => {
 
   return (
     <div className="relative">
+      <style jsx>{`
+        @keyframes moveSquares {
+          0% {
+            transform: translateX(-200px);
+          }
+          100% {
+            transform: translateX(-250px);
+          }
+        }
+      `}</style>
       <div className="relative w-full h-[55px] bg-[#1C1C1C] rounded-full overflow-hidden">
         <div
           className="relative flex h-full bg-[#D4B42A] overflow-hidden gap-4"
@@ -41,7 +50,6 @@ const UpdateBar = () => {
         >
           {squares.map((_, index) => (
             <svg
-              key={index}
               width="61"
               height="55"
               viewBox="0 0 61 55"
@@ -49,13 +57,16 @@ const UpdateBar = () => {
               xmlns="http://www.w3.org/2000/svg"
               className="absolute"
               style={{
-                left: `${index * 30}%`,
+                left: `${index * 50}px`,
+                width: `${width}%`,
+                transform: `translateX(-200px)`,
+                animation: `moveSquares 3s linear infinite`,
               }}
             >
               <rect
                 opacity="0.4"
-                width="78.0098"
-                height="158.744"
+                width="80"
+                height="160"
                 transform="matrix(-0.00893179 -0.99996 0.406116 0.913822 -3.59619 -6.06342)"
                 fill="#FFD72C"
               />
