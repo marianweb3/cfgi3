@@ -19,6 +19,14 @@ const History = ({bitcoinData}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  function stripPriceDecimals(bitcoinData: { price: number, [key: string]: any }[]): { price: number, [key: string]: any }[] {
+    return bitcoinData.map(item => ({
+      ...item,
+      price: Math.floor(item.price)
+    }));
+  }
+  const modifiedBitcoinData = stripPriceDecimals(bitcoinData);
+
   return (
     <section
       ref={ref}
@@ -82,7 +90,7 @@ const History = ({bitcoinData}) => {
         animate={isInView ? "visible" : "hidden"}
         variants={chartVariants}
       >
-        <CustomLineChart data={bitcoinData.length ? calculateLineData(bitcoinData) : lineData} height={437} />
+        <CustomLineChart data={bitcoinData.length ? calculateLineData(modifiedBitcoinData) : lineData} height={437} />
       </motion.div>
     </section>
   );
